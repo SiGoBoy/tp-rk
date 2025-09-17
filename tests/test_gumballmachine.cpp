@@ -6,10 +6,10 @@ TEST(GumballMachineTest, InitialStateIsNoQuarter) {
     EXPECT_EQ(m.getCount(), 5);
 }
 
-TEST(GumballMachineTest, InsertQuarterChangesState) {
+TEST(GumballMachineTest, InsertCoinChangesState) {
     GumballMachine m(5);
     testing::internal::CaptureStdout();
-    m.insertQuarter();
+    m.insertCoin();
     std::string out = testing::internal::GetCapturedStdout();
     EXPECT_NE(out.find("inserted"), std::string::npos);
 }
