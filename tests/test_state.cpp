@@ -3,41 +3,34 @@
 
 class DummyState : public State {
 public:
-    std::string called;
-    
     void insertCoin() override { called = "insertCoin"; }
     void ejectCoin() override { called = "ejectCoin"; }
     void turnCrank() override { called = "turnCrank"; }
     void dispense() override { called = "dispense"; }
-    void refill() override { called = "refill"; }
+
+    std::string called;
 };
 
-class StateTest : public ::testing::Test {
-protected:
+TEST(StateTest, InsertCoinCallsMethod) {
     DummyState s;
-};
-
-TEST_F(StateTest, InsertCoinCallsMethod) {
     s.insertCoin();
     EXPECT_EQ(s.called, "insertCoin");
 }
 
-TEST_F(StateTest, EjectCoinCallsMethod) {
+TEST(StateTest, EjectCoinCallsMethod) {
+    DummyState s;
     s.ejectCoin();
     EXPECT_EQ(s.called, "ejectCoin");
 }
 
-TEST_F(StateTest, TurnCrankCallsMethod) {
+TEST(StateTest, TurnCrankCallsMethod) {
+    DummyState s;
     s.turnCrank();
     EXPECT_EQ(s.called, "turnCrank");
 }
 
-TEST_F(StateTest, DispenseCallsMethod) {
+TEST(StateTest, DispenseCallsMethod) {
+    DummyState s;
     s.dispense();
     EXPECT_EQ(s.called, "dispense");
-}
-
-TEST_F(StateTest, RefillCallsMethod) {
-    s.refill();
-    EXPECT_EQ(s.called, "refill");
 }
