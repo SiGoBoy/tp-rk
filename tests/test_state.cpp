@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "State.h"
+#include "state.h"
 
 class DummyState : public State {
 public:

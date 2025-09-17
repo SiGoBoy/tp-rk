@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 #include "SoldOutState.h"
-#include "GumballMachine.h"
+#include "gumballmachine.h"
 
 TEST(SoldOutStateTest, InsertQuarter) {
     GumballMachine m(0);

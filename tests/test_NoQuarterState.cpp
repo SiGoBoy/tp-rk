@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 #include "NoQuarterState.h"
-#include "GumballMachine.h"
+#include "gumballmachine.h"
 
 TEST(NoQuarterStateTest, InsertQuarter) {
     GumballMachine m(5);

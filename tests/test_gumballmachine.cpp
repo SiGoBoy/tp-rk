@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "GumballMachine.h"
+#include "gumballmachine.h"
 
 TEST(GumballMachineTest, InitialStateIsNoQuarter) {
     GumballMachine m(5);

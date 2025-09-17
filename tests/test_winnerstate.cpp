@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 #include "WinnerState.h"
-#include "GumballMachine.h"
+#include "gumballmachine.h"
 
 TEST(WinnerStateTest, InsertQuarter) {
     GumballMachine m(5);
