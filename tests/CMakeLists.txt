@@ -1,33 +1,31 @@
-enable_testing()
+# tests/CMakeLists.txt
 
-add_executable(test_state
-    test_state.cpp
-    test_NoQuarterState.cpp
-    test_SoldOutState.cpp
-    test_SoldState.cpp
-    test_WinnerState.cpp
-)
+file(GLOB TEST_SRC *.cpp)
 
-target_link_libraries(test_state
+add_executable(test_all ${TEST_SRC})
+
+target_link_libraries(test_all
     PRIVATE
         gtest_main
         state_lib
+        HasQuarterState_lib
         NoQuarterState_lib
-        SoldOutState_lib
-        SoldState_lib
+        gumballmachine_lib
+        soldoutstate_lib
+        soldstate_lib
         winnerstate_lib
         gumballmachine_lib
 )
 
-target_include_directories(test_state PRIVATE
+target_include_directories(test_all PRIVATE
     ${CMAKE_SOURCE_DIR}/state_lib
+    ${CMAKE_SOURCE_DIR}/HasQuarterState_lib
     ${CMAKE_SOURCE_DIR}/NoQuarterState_lib
+    ${CMAKE_SOURCE_DIR}/gumballmachine_lib
     ${CMAKE_SOURCE_DIR}/soldoutstate_lib
     ${CMAKE_SOURCE_DIR}/soldstate_lib
     ${CMAKE_SOURCE_DIR}/winnerstate_lib
-    ${CMAKE_SOURCE_DIR}/gumballmachine_lib
-    ${CMAKE_SOURCE_DIR}/HasQuarterState_lib
 )
 
 include(GoogleTest)
-gtest_discover_tests(test_state)
+gtest_discover_tests(test_all)
