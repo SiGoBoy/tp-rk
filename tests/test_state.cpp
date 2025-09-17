@@ -3,34 +3,41 @@
 
 class DummyState : public State {
 public:
-    void insertQuarter() override { called = "insertQuarter"; }
-    void ejectQuarter() override { called = "ejectQuarter"; }
+    std::string called;
+    
+    void insertCoin() override { called = "insertCoin"; }
+    void ejectCoin() override { called = "ejectCoin"; }
     void turnCrank() override { called = "turnCrank"; }
     void dispense() override { called = "dispense"; }
-
-    std::string called;
+    void refill() override { called = "refill"; }
 };
 
-TEST(StateTest, InsertQuarterCallsMethod) {
+class StateTest : public ::testing::Test {
+protected:
     DummyState s;
-    s.insertQuarter();
-    EXPECT_EQ(s.called, "insertQuarter");
+};
+
+TEST_F(StateTest, InsertCoinCallsMethod) {
+    s.insertCoin();
+    EXPECT_EQ(s.called, "insertCoin");
 }
 
-TEST(StateTest, EjectQuarterCallsMethod) {
-    DummyState s;
-    s.ejectQuarter();
-    EXPECT_EQ(s.called, "ejectQuarter");
+TEST_F(StateTest, EjectCoinCallsMethod) {
+    s.ejectCoin();
+    EXPECT_EQ(s.called, "ejectCoin");
 }
 
-TEST(StateTest, TurnCrankCallsMethod) {
-    DummyState s;
+TEST_F(StateTest, TurnCrankCallsMethod) {
     s.turnCrank();
     EXPECT_EQ(s.called, "turnCrank");
 }
 
-TEST(StateTest, DispenseCallsMethod) {
-    DummyState s;
+TEST_F(StateTest, DispenseCallsMethod) {
     s.dispense();
     EXPECT_EQ(s.called, "dispense");
+}
+
+TEST_F(StateTest, RefillCallsMethod) {
+    s.refill();
+    EXPECT_EQ(s.called, "refill");
 }
