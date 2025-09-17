@@ -9,4 +9,5 @@ target_include_directories(NoQuarterState_lib
 target_link_libraries(NoQuarterState_lib
     PUBLIC
         state_lib
+	gumballmachine_lib
 )
