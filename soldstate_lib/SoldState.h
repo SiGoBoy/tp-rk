@@ -1,6 +1,6 @@
 #ifndef SOLDSTATE_H
 #define SOLDSTATE_H
-#include "State.h"
+#include "state.h"
 
 class GumballMachine;
 
