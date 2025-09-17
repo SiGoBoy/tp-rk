@@ -1,8 +1,5 @@
 
-add_library(HasQuarterState_lib
-    Hasquarterstate.cpp
-    HasQuarterState.h
-)
+add_library(HasQuarterState_lib STATIC hasquarterstate.cpp)
 
 target_include_directories(HasQuarterState_lib
     PUBLIC
