@@ -1,6 +1,6 @@
 #ifndef WINNERSTATE_H
 #define WINNERSTATE_H
-#include "State.h"
+#include "state.h"
 
 class GumballMachine;
 
