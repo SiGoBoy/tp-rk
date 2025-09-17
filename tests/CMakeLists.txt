@@ -18,13 +18,7 @@ target_link_libraries(test_all
 )
 
 target_include_directories(test_all PRIVATE
-    ${CMAKE_SOURCE_DIR}/state_lib
-    ${CMAKE_SOURCE_DIR}/HasQuarterState_lib
-    ${CMAKE_SOURCE_DIR}/NoQuarterState_lib
-    ${CMAKE_SOURCE_DIR}/gumballmachine_lib
-    ${CMAKE_SOURCE_DIR}/soldoutstate_lib
-    ${CMAKE_SOURCE_DIR}/soldstate_lib
-    ${CMAKE_SOURCE_DIR}/winnerstate_lib
+    ${CMAKE_SOURCE_DIR}
 )
 
 include(GoogleTest)
