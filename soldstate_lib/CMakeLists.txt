@@ -8,4 +8,5 @@ target_include_directories(soldstate_lib
 target_link_libraries(soldstate_lib
     PUBLIC
         state_lib
+	gumballmachine_lib
 )
