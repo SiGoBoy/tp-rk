@@ -1,7 +1,7 @@
 #include <iostream>
 #include <thread>
 #include <chrono>
-#include "State.h"
+#include "state.h"
 #include "gumballmachine.h"
 
 int main()
