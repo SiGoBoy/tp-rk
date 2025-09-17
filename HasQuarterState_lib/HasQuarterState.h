@@ -1,6 +1,6 @@
 #ifndef HASQUARTERSTATE_H
 #define HASQUARTERSTATE_H
-#include "State.h"
+#include "state.h"
 #include <random>
 #include <chrono>
 
