@@ -2,12 +2,12 @@
 #include "SoldOutState.h"
 #include "gumballmachine.h"
 
-TEST(SoldOutStateTest, InsertQuarter) {
+TEST(SoldOutStateTest, InsertCoin) {
     GumballMachine m(0);
     SoldOutState state(&m);
 
     testing::internal::CaptureStdout();
-    state.insertQuarter();
+    state.insertCoin();
     std::string out = testing::internal::GetCapturedStdout();
 
     EXPECT_NE(out.find("can't insert a quarter, the machine is sold out"), std::string::npos);
