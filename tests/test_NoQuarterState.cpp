@@ -2,12 +2,12 @@
 #include "NoQuarterState.h"
 #include "gumballmachine.h"
 
-TEST(NoQuarterStateTest, InsertQuarter) {
+TEST(NoQuarterStateTest, InsertCoin) {
     GumballMachine m(5);
     NoQuarterState state(&m);
 
     testing::internal::CaptureStdout();
-    state.insertQuarter();
+    state.insertCoin();
     std::string out = testing::internal::GetCapturedStdout();
 
     EXPECT_NE(out.find("You inserted a quarter"), std::string::npos);
