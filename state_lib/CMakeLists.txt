@@ -7,3 +7,4 @@ project(state_lib)
 
 add_library(state_lib STATIC state.h)
 target_include_directories(state_lib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+set_target_properties(state_lib PROPERTIES LINKER_LANGUAGE CXX)
