@@ -1,14 +1,14 @@
 #include <gtest/gtest.h>
-#include "state.h"
+#include "state_lib/state.h"
 
 class DummyState : public State {
 public:
+    std::string called;
+
     void insertCoin() override { called = "insertCoin"; }
-    void ejectCoin() override { called = "ejectCoin"; }
+    void ejectQuarter() override { called = "ejectQuarter"; }
     void turnCrank() override { called = "turnCrank"; }
     void dispense() override { called = "dispense"; }
-
-    std::string called;
 };
 
 TEST(StateTest, InsertCoinCallsMethod) {
@@ -17,10 +17,10 @@ TEST(StateTest, InsertCoinCallsMethod) {
     EXPECT_EQ(s.called, "insertCoin");
 }
 
-TEST(StateTest, EjectCoinCallsMethod) {
+TEST(StateTest, EjectQuarterCallsMethod) {
     DummyState s;
-    s.ejectCoin();
-    EXPECT_EQ(s.called, "ejectCoin");
+    s.ejectQuarter();
+    EXPECT_EQ(s.called, "ejectQuarter");
 }
 
 TEST(StateTest, TurnCrankCallsMethod) {
