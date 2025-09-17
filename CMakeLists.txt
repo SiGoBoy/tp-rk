@@ -35,6 +35,9 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(googletest)
 
-enable_testing()
+option(BUILD_TESTS "Build tests" ON)
 
-add_subdirectory(tests)
+if(BUILD_TESTS)
+    enable_testing()
+    add_subdirectory(tests)
+endif()
