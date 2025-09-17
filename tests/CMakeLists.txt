@@ -1,26 +1,33 @@
+enable_testing()
 
-set(TEST_LIBS
-    gtest
-    gtest_main
-    state_lib
-    HasQuarterState_lib
-    NoQuarterState_lib
-    gumballmachine_lib
-    soldoutstate_lib
-    soldstate_lib
-    winnerstate_lib
+add_executable(test_state
+    test_state.cpp
+    test_NoQuarterState.cpp
+    test_SoldOutState.cpp
+    test_SoldState.cpp
+    test_WinnerState.cpp
 )
 
-function(add_project_test target src)
-    add_executable(${target} ${src})
-    target_link_libraries(${target} PRIVATE ${TEST_LIBS})
-    add_test(NAME ${target} COMMAND ${target})
-endfunction()
+target_link_libraries(test_state
+    PRIVATE
+        gtest_main
+        state_lib
+        NoQuarterState_lib
+        SoldOutState_lib
+        SoldState_lib
+        winnerstate_lib
+        gumballmachine_lib
+)
 
-add_project_test(test_state test_state.cpp)
-add_project_test(test_HasQuarterState test_HasQuarterState.cpp)
-add_project_test(test_NoQuarterState test_NoQuarterState.cpp)
-add_project_test(test_gumballmachine test_gumballmachine.cpp)
-add_project_test(test_soldoutstate test_soldoutstate.cpp)
-add_project_test(test_soldstate test_soldstate.cpp)
-add_project_test(test_winnerstate test_winnerstate.cpp)
+target_include_directories(test_state PRIVATE
+    ${CMAKE_SOURCE_DIR}/state_lib
+    ${CMAKE_SOURCE_DIR}/NoQuarterState_lib
+    ${CMAKE_SOURCE_DIR}/soldoutstate_lib
+    ${CMAKE_SOURCE_DIR}/soldstate_lib
+    ${CMAKE_SOURCE_DIR}/winnerstate_lib
+    ${CMAKE_SOURCE_DIR}/gumballmachine_lib
+    ${CMAKE_SOURCE_DIR}/HasQuarterState_lib
+)
+
+include(GoogleTest)
+gtest_discover_tests(test_state)
