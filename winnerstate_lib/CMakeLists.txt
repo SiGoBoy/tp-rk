@@ -10,3 +10,4 @@ target_link_libraries(winnerstate_lib
     PUBLIC
         state_lib
 )
+target_link_libraries(winnerstate_lib PUBLIC gumballmachine_lib)
