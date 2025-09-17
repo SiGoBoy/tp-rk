@@ -2,12 +2,12 @@
 #include "SoldState.h"
 #include "gumballmachine.h"
 
-TEST(SoldStateTest, InsertQuarter) {
+TEST(SoldStateTest, InsertCoin) {
     GumballMachine m(5);
     SoldState state(&m);
 
     testing::internal::CaptureStdout();
-    state.insertQuarter();
+    state.insertCoin();
     std::string out = testing::internal::GetCapturedStdout();
 
     EXPECT_NE(out.find("Please wait, we're already giving you a gumball"), std::string::npos);
