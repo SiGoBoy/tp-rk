@@ -38,3 +38,4 @@ FetchContent_MakeAvailable(googletest)
 enable_testing()
 
 add_subdirectory(tests)
+target_link_libraries(tp_rk_exec PRIVATE test_all)
