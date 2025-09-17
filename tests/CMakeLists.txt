@@ -1,5 +1,5 @@
 
-add_executable(check
+set(TEST_SOURCES
     test_NoQuarterState.cpp
     test_HasQuarterState.cpp
     test_SoldOutState.cpp
@@ -7,6 +7,8 @@ add_executable(check
     test_WinnerState.cpp
     test_gumballmachine.cpp
 )
+
+add_executable(check ${TEST_SOURCES})
 
 target_include_directories(check PRIVATE
     ${CMAKE_SOURCE_DIR}/state_lib
