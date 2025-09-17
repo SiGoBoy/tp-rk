@@ -9,4 +9,5 @@ target_include_directories(soldoutstate_lib
 target_link_libraries(soldoutstate_lib
     PUBLIC
         state_lib
+	gumballmachine_lib
 )
