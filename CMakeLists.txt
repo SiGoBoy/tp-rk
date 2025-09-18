@@ -38,3 +38,5 @@ FetchContent_MakeAvailable(googletest)
 enable_testing()
 
 add_subdirectory(tests)
+include(CPackConfig.cmake)
+include(CPack)
