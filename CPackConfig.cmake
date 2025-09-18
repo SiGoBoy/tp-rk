@@ -1,4 +1,3 @@
-include(CPack)
 include(InstallRequiredSystemLibraries)
 set(CPACK_PACKAGE_CONTACT "kuzmenkofilaret1@gmail.com")
 
