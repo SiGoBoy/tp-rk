@@ -25,8 +25,8 @@ jobs:
     run: cmake --build build
 
   - name: Run tests
-  run: |
-    ./build/tests/test_all && echo "All tests passed" || {
+    run: |
+     ./build/tests/test_all && echo "All tests passed" || {
       echo "Some tests failed - continuing build"
       exit 0  # Force success
-    }
+     }
