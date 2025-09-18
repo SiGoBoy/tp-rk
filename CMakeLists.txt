@@ -1,3 +1,4 @@
+include(CPack)
 cmake_minimum_required(VERSION 3.10)
 project(tp_rk LANGUAGES CXX)
 
@@ -38,3 +39,5 @@ FetchContent_MakeAvailable(googletest)
 enable_testing()
 
 add_subdirectory(tests)
+
+

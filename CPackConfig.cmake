@@ -1,3 +1,4 @@
+include(CPack)
 include(InstallRequiredSystemLibraries)
 set(CPACK_PACKAGE_CONTACT "kuzmenkofilaret1@gmail.com")
 
@@ -11,4 +12,3 @@ set(CPACK_PACKAGE_NAME "${PROJECT_NAME}")
 set(CPACK_PACKAGE_VERSION "1.0.0")
 set(CPACK_PACKAGE_DESCRIPTION "Gumball Machine State Pattern Implementation")
 set(CPACK_GENERATOR "DEB")
-include(CPack)
