@@ -25,4 +25,4 @@ jobs:
     run: cmake --build build
 
   - name: Run tests
-    run: build/test_all
+    run: build/tests/test_all
