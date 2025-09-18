@@ -1,5 +1,5 @@
 include(InstallRequiredSystemLibraries)
-set(CPACK_PACKAGE_NAME "${PROJECT_NAME}")
+set(CPACK_PACKAGE_NAME "state-dev")
 set(CPACK_PACKAGE_CONTACT "kuzmenkofilaret1@gmail.com")
 set(CPACK_PACKAGE_VERSION "1.0.0.0")
 set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "State C++ Design Pattern")
