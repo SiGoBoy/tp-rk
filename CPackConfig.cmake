@@ -9,6 +9,6 @@ set(CPACK_DEBIAN_PACKAGE_RELEASE 1)
 
 set(CPACK_PACKAGE_NAME "tp-rk")
 set(CPACK_PACKAGE_VERSION "1.0.0")
-set(CPACK_PACKAGE_DESCRIPTION "Gumball Machine State Pattern Implementation")
+set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Filaret <kuzmenkofilaret1@gmail.com>")
 set(CPACK_GENERATOR "DEB")
-set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Filaret <kuzmenkofilaret1@example.com>")
+set(CPACK_PACKAGE_DESCRIPTION "Gumball Machine State Pattern Implementation")
